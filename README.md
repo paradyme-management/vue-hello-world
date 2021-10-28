@@ -1,24 +1,29 @@
-# helloworld
+# Vue.js 2.0 Webpack Simple Template - Prerender SPA Example
 
-## Project setup
-```
+Demonstrates usage of Vuejs 2.0 with Webpack 3. Build will populate `dist/index.html` with the prerendered page.
+
+## Build
+
+```bash
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+Now check the new `dist` directory for your prerendered static files!
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+To view the rendered files, install [http-server](https://www.npmjs.com/package/http-server) (`npm install -g http-server`) if you haven't already and run it in the dist directory.
+
+Now visit the following route in your browser (note the trailing slash):
+
+- [http://localhost:8000/](http://localhost:8000/)
+
+## Development
+
+To edit the `prerender-spa-plugin` configuration, look for `new PrerenderSPAPlugin` in the plugins section of `webpack.config.js`.
+
+If you're using a router or have more than one page to prerender, edit the `routes` array under that config object.
+
+```bash
+npm install
+npm run dev
+```
