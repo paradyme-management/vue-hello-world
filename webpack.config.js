@@ -67,18 +67,6 @@ if (process.env.NODE_ENV === 'production') {
       template: 'index.html',
       filename: path.resolve(__dirname, 'dist/index.html')
     }),
-    new PrerenderSPAPlugin({
-      staticDir: path.join(__dirname, 'dist'),
-      routes: [ '/', '/about', '/contact' ],
-
-      renderer: new Renderer({
-        inject: {
-          foo: 'bar'
-        },
-        headless: true,
-        renderAfterDocumentEvent: 'render-event'
-      })
-    })
   ])
 } else {
   // NODE_ENV === 'development'
